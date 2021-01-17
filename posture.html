@@ -25,6 +25,8 @@
         // the link to your model provided by Teachable Machine export panel
         const URL = "https://teachablemachine.withgoogle.com/models/1WY1E_I1O/";
         let model, webcam, ctx, labelContainer, maxPredictions;
+        var points = 0;
+        var active = true;
     
         async function init() {
             const modelURL = URL + "model.json";
@@ -52,6 +54,11 @@
             for (let i = 0; i < maxPredictions; i++) { // and class labels
                 labelContainer.appendChild(document.createElement("div"));
             }
+            
+        }
+
+        async function end(){
+            active = false;
         }
     
         async function loop(timestamp) {
@@ -70,19 +77,25 @@
             var good = 0
             var bad = 0
             for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
                 if (i==0){
                     good = prediction[i].probability.toFixed(2)
                 }
                 else{
                     bad = prediction[i].probability.toFixed(2)
                 }
+                const classPrediction =
+                    prediction[i].className + " sitting posture score" + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+                
             }
             
             if (bad > .8 && good < .2 ){
                 alert("Warning! Your posture is not good for you! pls fix")
+            }
+            else if (active==true)
+            {
+                points += 1;
+                document.getElementById("score").innerHTML = points;
             }
             // finally draw the poses
             drawPose(pose);
@@ -100,8 +113,10 @@
             }
         }
     </script>
-    
-
+    <button type="button2" onclick="end()">END</button>
+    <div>Score: </div>
+    <p id="score">
+    </p>
 
 </body>
 
