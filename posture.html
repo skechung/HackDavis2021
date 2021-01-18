@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-    <h1>
-        Fix your posture!
-    </h1>
-    <h4>
-        Please place your computer away from you at arms length (your finger tips should barely touch the screen). 
-        Make sure you are facing the screen and if possible, adjust the screen so that it is at eye level (so you don't crane your neck too far up or down)
-    </h4>
-</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">    <link href="styles.css" rel="stylesheet">
+    <title>Fix your posture! Program - HackDavis 2021</title>
+</head>
+
 <body>
 
+    <section id=container>
+        <h1>Fix your posture!</h1>
+        <section id=inner-container>
+            <h4>Please place your computer away from you at arms length (your finger tips should barely touch the screen). 
+                Make sure you are facing the screen and adjust the screen so that it is at eye level (so you don't crane 
+                your neck too far up or down).</h5>
+            <p>When you are ready, please click the button below to begin!</p>
+            <button type="button" onclick="init()">Start</button>
+    
+            <section id="camera">
+                <div><canvas id="canvas"></canvas></div>
+                <div id="label-container"></div>
+            </section>
+        </section>
+    </section>
 
-    <div>When you are ready, please click the link below to begin!</div>
-    <button type="button" onclick="init()">Start</button>
-    <div><canvas id="canvas"></canvas></div>
-    <div id="label-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script type="text/javascript">

@@ -1,0 +1,53 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    background-color: rgb(196, 225, 250);
+}
+
+#container {
+    display: block;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 800px;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+#inner-container {
+    background-color: papayawhip;
+    line-height: 25px;
+}
+
+h4 {
+    margin: 0px 100px 0px 100px;
+    padding-top: 25px;
+}
+
+button {
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 25px;
+}
+
+button:hover {
+    background-color: white;
+}
+
+#camera {
+    background-color: rgb(255, 255, 255);
+}
+
+#canvas {
+    margin-top: 30px;
+}
+
+#label-container {
+    padding-bottom: 8px;
+}
