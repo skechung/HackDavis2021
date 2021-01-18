@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <header>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <Title>
+        Fix your posture!
+
+    </Title>
     <h1>
         Fix your posture!
     </h1>
-    <h4>
+    <h3>
         Please place your computer away from you at arms length (your finger tips should barely touch the screen). 
         Make sure you are facing the screen and if possible, adjust the screen so that it is at eye level (so you don't crane your neck too far up or down)
-    </h4>
+    </h3>
 </header>
 <body>
-
 
     <div>When you are ready, please click the link below to begin!</div>
     <button type="button" onclick="init()">Start</button>
@@ -39,7 +49,7 @@
             maxPredictions = model.getTotalClasses();
     
             // Convenience function to setup a webcam
-            const size = 200;
+            const size = 400;
             const flip = true; // whether to flip the webcam
             webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
